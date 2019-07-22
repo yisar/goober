@@ -15,6 +15,7 @@ export const astish = val => {
         if (block[4]) tree.shift();
         
         if (block[3]) {
+            console.log(block[3]);
             tree.unshift((tree[0][block[3]] = {}));
         } else if (!block[4]) {
             tree[0][block[1]] = block[2];

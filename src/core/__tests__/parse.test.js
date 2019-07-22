@@ -85,6 +85,25 @@ describe("parse", () => {
         ].join(""));
     });
 
+    it.only("nested with multiple selector",()=>{
+      const out  = parse({
+        "div,span": {
+          "display":"value",
+          "&:hover":{
+            "border": "0",
+            "span": {
+              "index": "unset"
+            }
+          }
+        }
+      },"hush")
+      expect(out).toEqual([
+        "hush div, hush span {display:value;}",
+        "hush div:hover, hush span:hover{border:0;}",
+        "hush div:hover span,hush span:hover span{index:unset;}"
+      ].join(""));
+    });
+
     it("cra", () => {
         expect(parse({
             "@import": "url('path/to')",

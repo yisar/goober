@@ -55,6 +55,26 @@ describe("astish", () => {
         });
     });
 
+    it.only("nested deep", () => {
+        expect(astish(`
+            prop: value;
+            
+            span,
+            div {
+                active: 1;
+                display: none;
+
+                &:active {
+                    link: none;
+
+                    a,b {
+                        foo: 1;
+                    }
+                }
+            }
+        `)).toEqual({});
+    });
+
     it("regression", () => {
         expect(astish(`
             &.g0ssss {
