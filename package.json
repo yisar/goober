@@ -55,7 +55,7 @@
     "@emotion/styled": "^10.0.23",
     "babel-jest": "^24.1.0",
     "benchmark": "^2.1.4",
-    "csstype": "^2.6.3",
+    "csstype": "^2.6.10",
     "husky": "4.2.2",
     "jest": "^24.1.0",
     "lint-staged": "10.0.8",
